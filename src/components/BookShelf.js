@@ -22,9 +22,11 @@ const BookShelf = ({ books, updateBookShelf }) => {
                                     <div className="bookshelf-books">
                                         <ol className="books-grid">
                                             {
-                                                books.filter((book) => book.shelf === shelf).map(book => (
-                                                    <Book book={book} updateBookShelf={updateBookShelf} />
-                                                ))
+                                                books && books.length ? books.filter((book) => book.shelf === shelf).map((book) => (
+                                                    <li key={book.id}>
+                                                        <Book book={book} updateBookShelf={updateBookShelf} />
+                                                    </li>
+                                                )) : <span>No have book (Search & add your book)</span>
                                             }
                                         </ol>
 

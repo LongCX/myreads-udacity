@@ -1,21 +1,28 @@
 import "./App.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import * as BooksAPI from "./utils/BooksAPI";
-import { Route, Routes, useNavigate } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import BookShelf from "./components/BookShelf";
 import BookSearch from "./components/BookSearch";
 
 function App() {
-  let navigate = useNavigate();
 
   const [books, setBooks] = useState([]);
 
   const [searchResults, setSearchResults] = useState([]);
 
+  useEffect(() => {
+    const getMyBooks = async () => {
+      const res = await BooksAPI.getAll();
+      setBooks(res);
+    };
+    getMyBooks();
+  }, []);
+
   const searchBooks = (query) => {
     const search = async () => {
       const res = await BooksAPI.search(query.trim());
-      if (!res.error && res !== 'undefined') {
+      if (!res.error) {
         setSearchResults(res);
       } else {
         setSearchResults([]);
@@ -26,7 +33,6 @@ function App() {
     } else {
       setSearchResults([]);
     }
-    navigate("/search");
   }
 
   const updateBookShelf = (book, toShelf) => {
