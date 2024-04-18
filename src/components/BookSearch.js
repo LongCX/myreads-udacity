@@ -22,7 +22,7 @@ const BookSearch = ({ searchBooks, searchResults, updateBookShelf }) => {
                 <ol className="books-grid">
                     {
                         searchResults.map((book) => (
-                            <Book infoBook={book} updateBookShelf={updateBookShelf} />
+                            <Book book={book} updateBookShelf={updateBookShelf} />
                         ))
                     }
                 </ol>
