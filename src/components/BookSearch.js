@@ -21,11 +21,11 @@ const BookSearch = ({ searchBooks, searchResults, updateBookShelf }) => {
             <div className="search-books-results">
                 <ol className="books-grid">
                     {
-                        searchResults.map((book) => (
+                        searchResults && searchResults.length ? searchResults.map((book) => (
                             <li key={book.id}>
-                                <Book book={book} updateBookShelf={updateBookShelf} />
+                            <Book book={book} updateBookShelf={updateBookShelf} />
                             </li>
-                        ))
+                        )) : <span>No result (Put your keyword correcttly)</span>
                     }
                 </ol>
             </div>

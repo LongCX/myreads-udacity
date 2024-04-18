@@ -1,5 +1,5 @@
 import "./App.css";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import * as BooksAPI from "./utils/BooksAPI";
 import { Route, Routes, useNavigate } from "react-router-dom";
 import BookShelf from "./components/BookShelf";
@@ -17,33 +17,26 @@ function App() {
       const res = await BooksAPI.search(query.trim());
       if (!res.error && res !== 'undefined') {
         setSearchResults(res);
+      } else {
+        setSearchResults([]);
       }
     }
     if (query) {
       search();
+    } else {
+      setSearchResults([]);
     }
     navigate("/search");
   }
 
   const updateBookShelf = (book, toShelf) => {
     const update = async () => {
-      const res = await BooksAPI.update(book, toShelf)
+      await BooksAPI.update(book, toShelf)
       book.shelf = toShelf;
       setBooks(books.filter((b) => b.id !== book.id).concat([book]));
     }
     update();
   }
-
-  // Test call API get list book
-  const [fullBooks, setFullBooks] = useState([]);
-  useEffect(() => {
-    const getBooks = async () => {
-      const res = await BooksAPI.getAll();
-      setFullBooks(res);
-    };
-
-    getBooks();
-  }, []);
 
   return (
     <div className="app">
