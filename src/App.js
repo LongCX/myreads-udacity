@@ -9,8 +9,6 @@ function App() {
 
   const [books, setBooks] = useState([]);
 
-  const [searchResults, setSearchResults] = useState([]);
-
   useEffect(() => {
     const getMyBooks = async () => {
       const res = await BooksAPI.getAll();
@@ -18,22 +16,6 @@ function App() {
     };
     getMyBooks();
   }, []);
-
-  const searchBooks = (query) => {
-    const search = async () => {
-      const res = await BooksAPI.search(query.trim());
-      if (!res.error) {
-        setSearchResults(res);
-      } else {
-        setSearchResults([]);
-      }
-    }
-    if (query) {
-      search();
-    } else {
-      setSearchResults([]);
-    }
-  }
 
   const updateBookShelf = (book, toShelf) => {
     const update = async () => {
@@ -50,7 +32,7 @@ function App() {
         <Route
           path="/search"
           element={
-            <BookSearch searchBooks={searchBooks} searchResults={searchResults} updateBookShelf={updateBookShelf} />
+            <BookSearch books={books} updateBookShelf={updateBookShelf} />
           }
         />
         <Route

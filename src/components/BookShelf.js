@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Book from "./Book"
 
 const BookShelf = ({ books, updateBookShelf }) => {
+
     const bookShelfTitles = [
         { type: "currentlyReading", title: "Currently Reading" },
         { type: "wantToRead", title: "Want to Read" },

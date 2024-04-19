@@ -1,6 +1,12 @@
 import PropTypes from "prop-types";
 
-const Book = ({ book, updateBookShelf }) => {
+const Book = ({ statusShelf, book, updateBookShelf }) => {
+    let statusShelfBook = 'none';
+    if (statusShelf?.length > 0) {
+        statusShelfBook = statusShelf[0];
+    } else {
+        statusShelfBook = book.shelf ? book.shelf :'none';
+    }
 
     return (
         <div className="book">
@@ -15,7 +21,7 @@ const Book = ({ book, updateBookShelf }) => {
                     }}
                 ></div>
                 <div className="book-shelf-changer">
-                    <select value={book.shelf ? book.shelf : 'none'} onChange={(e) => updateBookShelf(book, e.target.value)}>
+                    <select value={statusShelfBook} onChange={(e) => updateBookShelf(book, e.target.value)}>
                         <option value="moveTo" disabled>Move to...</option>
                         <option value="currentlyReading">Currently Reading</option>
                         <option value="wantToRead">Want to Read</option>
