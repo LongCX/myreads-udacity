@@ -6,10 +6,10 @@ This is a react project and it is part of Udacity Frontend Nanodegree course. Th
 
 ## Screenshots
 
-![BookShelf_1]([https://via.placeholder.com/468x300?text=App+Screenshot+Here](https://myreads.phanh.vn/demo/Screenshot_BookShelf_1.png))
-![BookShelf_2]([https://via.placeholder.com/468x300?text=App+Screenshot+Here](https://myreads.phanh.vn/demo/Screenshot_BookShelf_2.png))
-![BookShelf_3]([https://via.placeholder.com/468x300?text=App+Screenshot+Here](https://myreads.phanh.vn/demo/Screenshot_BookShelf_3.png))
-![BookSearch_1]([https://via.placeholder.com/468x300?text=App+Screenshot+Here](https://myreads.phanh.vn/demo/Screenshot_BookSearch_1.png))
+![BookShelf_1](https://myreads.phanh.vn/demo/Screenshot_BookShelf_1.png)
+![BookShelf_2](https://myreads.phanh.vn/demo/Screenshot_BookShelf_2.png)
+![BookShelf_3](https://myreads.phanh.vn/demo/Screenshot_BookShelf_3.png)
+![BookSearch_1](https://myreads.phanh.vn/demo/Screenshot_BookSearch_1.png)
 
 
 ## Demo
