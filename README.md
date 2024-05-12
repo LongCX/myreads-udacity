@@ -3,20 +3,6 @@
 
 This is a react project and it is part of Udacity Frontend Nanodegree course. This is a single-page app that allows user to store your books and track what you're reading, want to read and books you have completed.
 
-
-## Screenshots
-
-![BookShelf_1](https://myreads.phanh.vn/demo/Screenshot_BookShelf_1.png)
-![BookShelf_2](https://myreads.phanh.vn/demo/Screenshot_BookShelf_2.png)
-![BookShelf_3](https://myreads.phanh.vn/demo/Screenshot_BookShelf_3.png)
-![BookSearch_1](https://myreads.phanh.vn/demo/Screenshot_BookSearch_1.png)
-
-
-## Demo
-
-https://myreads.phanh.vn/
-
-
 ## How to start
 
 Start my project with npm
